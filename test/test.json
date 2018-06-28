@@ -1,0 +1,23 @@
+{
+  "description": "\n * General component description.\n ",
+  "props": {
+    "foo": {
+      "type": "number",
+      "declaration": "\n   * Description of prop \"foo\".\n   ",
+      "defaultValue": 42,
+      "isRequired": false
+    },
+    "bar": {
+      "type": "number",
+      "declaration": "\n   * Description of prop \"bar\" (a custom validation function).\n   ",
+      "defaultValue": 21,
+      "isRequired": true
+    },
+    "baz": {
+      "type": "number | string",
+      "declaration": "d asdas\nasdasd",
+      "isRequired": false
+    }
+  },
+  "name": "MyComponent"
+}
