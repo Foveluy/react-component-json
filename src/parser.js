@@ -3,6 +3,10 @@ const traverse = require("@babel/traverse").default;
 const generate = require("@babel/generator").default;
 const signale = require("signale");
 
+String.prototype.replaceAll = function(s1, s2) {
+  return this.replace(new RegExp(s1, "gm"), s2);
+};
+
 function parse(src) {
   const options = {
     babelrc: false,
@@ -31,7 +35,42 @@ const classDoc = {
 const defaultProps = {};
 
 function nodeComment(node) {
-  return node.leadingComments.map(c => c.value).join("\n");
+  return node.leadingComments
+    .map(c => c.value)
+    .join("\n")
+    .replace("*", "");
+}
+
+function removeUselessCode(string) {
+  return string.replaceAll("PropTypes.", "").replaceAll(".isRequired", "");
+}
+
+function extractType(string) {
+  if (/oneOfType/.test(string)) {
+    let str1 = string
+      .match(/\[[^\}]+\]/)[0]
+      .replace("[", "")
+      .replace("]", "")
+      .replaceAll(",", " |");
+
+    return removeUselessCode(str1);
+  }
+  if (/arrayOf/.test(string)) {
+    return "array";
+  }
+  if (/oneOf/.test(string)) {
+    let str1 = string
+      .match(/\[[^\}]+\]/)[0]
+      .replace("[", "")
+      .replace("]", "")
+      .replaceAll(",", " |");
+
+    return str1;
+  }
+  if (/shape/.test(string)) {
+    return "object";
+  }
+  return removeUselessCode(string);
 }
 
 const visior = {
@@ -49,11 +88,11 @@ const visior = {
 
         ensure(classDoc.props, key);
 
-        const values = generate(prop.value).code;
-        classDoc.props[key].type = values;
+        const raw = generate(prop.value).code;
+        classDoc.props[key].type = extractType(raw);
         classDoc.props[key].declaration = nodeComment(prop);
         classDoc.props[key].defaultValue = defaultProps[key];
-        classDoc.props[key].isRequired = /isRequired/.test(values);
+        classDoc.props[key].isRequired = /isRequired/.test(raw);
       });
     }
   },
@@ -74,9 +113,7 @@ const visior = {
 
 module.exports = function(src) {
   const ast = parse(src);
-
   traverse(ast, visior);
-
   if (!has_defaultProps) {
     signale.fatal(`组件 ${classDoc.name} 没有 defaultProps`);
   }

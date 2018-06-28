@@ -25,7 +25,10 @@ MyComponent.propTypes = {
   bar: PropTypes.number.isRequired,
   //d asdas
   //asdasd
-  baz: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+  baz: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  // You can ensure that your prop is limited to specific values by treating
+  // it as an enum.
+  optionalEnum: PropTypes.oneOf(["News", "Photos"])
 };
 
 export default MyComponent;

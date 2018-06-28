@@ -9,13 +9,20 @@
     },
     "bar": {
       "type": "number",
-      "declaration": "\n   * Description of prop \"bar\" (a custom validation function).\n   ",
+      "declaration":
+        "\n   * Description of prop \"bar\" (a custom validation function).\n   ",
       "defaultValue": 21,
       "isRequired": true
     },
     "baz": {
       "type": "number | string",
       "declaration": "d asdas\nasdasd",
+      "isRequired": false
+    },
+    "optionalEnum": {
+      "type": "\"News\" | \"Photos\"",
+      "declaration":
+        " You can ensure that your prop is limited to specific values by treating\n it as an enum.",
       "isRequired": false
     }
   },
