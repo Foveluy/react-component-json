@@ -9,8 +9,7 @@
     },
     "bar": {
       "type": "number",
-      "declaration":
-        "\n   * Description of prop \"bar\" (a custom validation function).\n   ",
+      "declaration": "\n   * Description of prop \"bar\" (a custom validation function).\n   ",
       "defaultValue": 21,
       "isRequired": true
     },
@@ -20,10 +19,14 @@
       "isRequired": false
     },
     "optionalEnum": {
-      "type": "\"News\" | \"Photos\"",
-      "declaration":
-        " You can ensure that your prop is limited to specific values by treating\n it as an enum.",
+      "type": "'News' | 'Photos'",
+      "declaration": " You can ensure that your prop is limited to specific values by treating\n it as an enum.",
       "isRequired": false
+    },
+    "optionalObjectWithShape": {
+      "type": "\n  optionalProperty: string |\n  requiredProperty: number\n",
+      "declaration": " An object taking on a particular shape",
+      "isRequired": true
     }
   },
   "name": "MyComponent"
