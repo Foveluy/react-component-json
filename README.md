@@ -2,6 +2,14 @@
 
 这个项目是为了给 rebile 项目书写文档使用的一个工具。使用 babel 分析 react component 的代码输出一个 json 的文件
 
+## 用法
+
+```js
+const { json, md } = require("react-component-json");
+json(src); ///
+md(src); ///
+```
+
 ## component 目录结构
 
 ```yaml
