@@ -24,7 +24,7 @@
       "isRequired": false
     },
     "optionalObjectWithShape": {
-      "type": "\n  optionalProperty: string |\n  requiredProperty: number\n",
+      "type": "{\n  optionalProperty: string,\n  requiredProperty: number!\n}",
       "declaration": " An object taking on a particular shape",
       "isRequired": true
     }
