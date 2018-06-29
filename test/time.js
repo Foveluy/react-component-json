@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 /**
  * General component description.
+ * 一个普通的 `component` 描述
  */
 class MyComponent extends Component {
   static defaultProps = {
