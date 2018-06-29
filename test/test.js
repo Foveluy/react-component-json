@@ -1,7 +1,7 @@
 const { json, md, demo } = require("../src/parser");
 const fs = require("fs");
 
-const source = fs.readFileSync("./time.js", "utf8");
+const source = fs.readFileSync("./button.js", "utf8");
 const demosrc = fs.readFileSync("./demotest.js", "utf8");
 
 const obj = json(source);

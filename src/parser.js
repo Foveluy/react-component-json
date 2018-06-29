@@ -70,7 +70,7 @@ const visior = {
     }
   },
   AssignmentExpression: function({ node }) {
-    if (node.left.property.name === "propTypes") {
+    if (node.left.property && node.left.property.name === "propTypes") {
       has_propType = true;
       node.right.properties.forEach(prop => {
         const key = prop.key.name;

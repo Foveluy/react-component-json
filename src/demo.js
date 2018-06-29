@@ -47,7 +47,5 @@ ${format}
 `;
     })
     .join("\n");
-
-  console.log(codes);
   return merge;
 };

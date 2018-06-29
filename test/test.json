@@ -1,33 +1,5 @@
 {
-  "description": "<br/>  General component description.<br/>  一个普通的 `component` 描述<br/> ",
-  "props": {
-    "foo": {
-      "type": "number",
-      "declaration": "<br/>    Description of prop \"foo\".<br/>   ",
-      "defaultValue": 42,
-      "isRequired": false
-    },
-    "bar": {
-      "type": "number",
-      "declaration": "<br/>    Description of prop \"bar\" (a custom validation function).<br/>   ",
-      "defaultValue": 21,
-      "isRequired": true
-    },
-    "baz": {
-      "type": "number or string",
-      "declaration": "d asdas<br/>asdasd",
-      "isRequired": false
-    },
-    "optionalEnum": {
-      "type": "'News' or 'Photos'",
-      "declaration": " You can ensure that your prop is limited to specific values by treating<br/> it as an enum.",
-      "isRequired": false
-    },
-    "optionalObjectWithShape": {
-      "type": "`{  optionalProperty: string,  requiredProperty: number!}`",
-      "declaration": " An object taking on a particular shape",
-      "isRequired": true
-    }
-  },
-  "name": "MyComponent"
+  "description": "",
+  "props": {},
+  "name": "Tab"
 }
