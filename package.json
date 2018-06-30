@@ -1,10 +1,10 @@
 {
   "name": "react-component-json",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "这个项目是为了给 rebile 项目书写文档使用的一个工具。使用 babel 分析 react component 的代码输出一个 json 的文件",
   "main": "./src/parser.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./test/test.js"
   },
   "repository": {
     "type": "git",
