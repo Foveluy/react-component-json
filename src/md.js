@@ -1,5 +1,5 @@
 module.exports = function MD(json) {
-  const { description, name, props } = json;
+  const { description, name, props } = json
   const output = `
 # ${name}
 
@@ -11,11 +11,9 @@ ${description}
 | ------------- |:-------------:|:-----:| -----:|-----:|
 ${Object.keys(props)
     .map(key => {
-      return `|${key}|${props[key].declaration}|${props[key].type}|${
-        props[key].isRequired
-      }|${props[key].defaultValue}|`;
+      return `|${key}|${props[key].declaration}|${props[key].type}|${props[key].isRequired}|${props[key].defaultValue}|`
     })
-    .join("\n")}
-    `;
-  return output;
-};
+    .join('\n')}
+    `
+  return { md: output, name }
+}

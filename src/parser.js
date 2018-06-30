@@ -30,7 +30,8 @@ exports.json = function(src) {
   
   function removeUselessCode(string) {
     return string
-      .replaceAll("PropTypes.", "")
+      .replaceAll(/PropTypes./, "")
+      .replaceAll(/propTypes./, "")
       .replaceAll(".isRequired", "")
       .replaceAll(/\n/, "");
   }
@@ -41,7 +42,7 @@ exports.json = function(src) {
         .match(/\[[^\}]+\]/)[0]
         .replace("[", "")
         .replace("]", "")
-        .replace(",", " or");
+        .replaceAll(",", " or");
   
       return removeUselessCode(str1);
     }
@@ -53,7 +54,7 @@ exports.json = function(src) {
         .match(/\[[^\}]+\]/)[0]
         .replace("[", "")
         .replace("]", "")
-        .replace(",", " or");
+        .replaceAll(",", " or");
   
       return str1;
     }

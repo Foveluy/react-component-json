@@ -1,5 +1,36 @@
 {
   "description": "",
-  "props": {},
-  "name": "Tab"
+  "props": {
+    "type": {
+      "type": "'defalut' or 'primary' or 'warning'",
+      "declaration": "",
+      "defaultValue": "default",
+      "isRequired": false
+    },
+    "disable": {
+      "type": "bool",
+      "declaration": "",
+      "defaultValue": false,
+      "isRequired": false
+    },
+    "loading": {
+      "type": "bool",
+      "declaration": "",
+      "defaultValue": false,
+      "isRequired": false
+    },
+    "inline": {
+      "type": "bool",
+      "declaration": "",
+      "defaultValue": false,
+      "isRequired": false
+    },
+    "size": {
+      "type": "'large' or 'small'",
+      "declaration": "",
+      "defaultValue": "large",
+      "isRequired": false
+    }
+  },
+  "name": "Button"
 }
