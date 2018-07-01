@@ -34,9 +34,11 @@ module.exports = function(src) {
       const format = prettier.format(c.code, {
         semi: true,
         parser: 'babylon',
-        printWidth: 120,
+        printWidth: 80,
         tabWidth: 2,
-        jsxBracketSameLine: true
+        jsxBracketSameLine: true,
+        singleQuote: true,
+        bracketSpacing: false
       })
 
       return `

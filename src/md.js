@@ -1,11 +1,6 @@
 module.exports = function MD(json) {
   const { description, name, props } = json
   const output = `
-# ${name}
-
-${description}
-
-
 ## API 描述
 |名字| 描述|类型|是否需要|默认值|
 | ------------- |:-------------:|:-----:| -----:|-----:|
@@ -15,5 +10,5 @@ ${Object.keys(props)
     })
     .join('\n')}
     `
-  return { md: output, name }
+  return { md: output, name, description }
 }
